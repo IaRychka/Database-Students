@@ -30,78 +30,43 @@
 
 struct Student
 {
-	std::string lName;
-	std::string fName;
+	std::string fname, lname , group;
 	char sex;
-	unsigned int age;
-	std::string group;
-	unsigned int mMark;
-	unsigned int phMark;
-	unsigned int chMark;
-	void print() {
-		std::cout << fName << '\t';
-		std::cout << lName << '\t';
-		std::cout << sex << '\t';
-		std::cout << age << '\t';
-		std::cout << mMark << '\t' << phMark << '\t' << chMark << '\n';
-	}
+	unsigned int math , phis , chem , age;
+	
 
 	Student() {
-	std::string name;
-	unsigned int num;
-	char S;
-		std::cout << "Enter name: ";
-		std::cin >> name;
-		fName = name;
-		std::cout << "\nEnter last name: ";
-		std::cin >> name;
-		lName = name;
-		std::cout << "\nEnter sex: ";
-		std::cin >> S;
-		if(S == 'F' or S == 'M')
-		sex = S;
-		else {
-			std::cout << "does not exist";
-			sex = 'N';
-		}
-		std::cout << "\nEnter age: ";
-		std::cin >> num;
-		if (num < 100)
-		age = num;
-		else {
-			std::cout << "does not exist";
-			age = 0;
-		}
-		std::cout << "\nEnter group: ";
-		std::cin >> name;
-		group = name;
-		std::cout << "\nEnter math mark: ";
-		std::cin >> num;
-		mMark = num;
-		std::cout << "\nEnter phisycs mark: ";
-		std::cin >> num;
-		phMark = num;
-		std::cout << "\nEnter chemestry mark: ";
-		std::cin >> num;
-		chMark = num;
-		std::cout << std::endl;
+		fname = "nondefind";
+		lname = "nondefind";
+		sex = 'N';
+		age = 0;
+		group = "nondefind";
+		math = 0;
+		phis = 0;
+		chem = 0;
+	}
+
+	void student() {
+		
+		std::cin >> fname >> lname >> sex >> age >> group >> math >> phis >> chem;
+	}
+
+
+	void print() {
+		std::cout << fname << '\t' << lname << '\t' << sex << '\t' << age << '\t' << group << '\t' << math << '\t' << phis << '\t' << chem << '\n';
 	}
 };
 
 
-
 int main() {
-	
-	int numOfSt;
-	std::vector <Student> students;
-	std::cin >> numOfSt;
-	for (int i = 0; i < numOfSt; ++i) {
-		students.push_back(Student());
-	}
-	for (int i = 0; i < numOfSt; ++i) {
-		students[i].print();
-	}
-	 
 
-
+	int choice;
+	std::cin >> choice; 
+	std::vector <Student> pupils; 
+	for (int i = 0; i < choice; i++) {
+		pupils.push_back(Student());
+	}
+	for (int i = 0; i < choice; i++) {
+		pupils.push_back(Student());
+	}
 }
